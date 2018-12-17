@@ -93,11 +93,11 @@ def cluster_graph(original_graph, max_dist):
 
 def build_cluster_table(graph):
 
-    *_, max_distance = max(graph.edges.data('distance'), key=itemgetter(2))
+    distances = sorted(set(edge[2] for edge in graph.edges.data('distance')))
 
     table = {}
 
-    for d in range(0, max_distance + 1):
+    for d in distances:
 
         table[d] = {}
 
