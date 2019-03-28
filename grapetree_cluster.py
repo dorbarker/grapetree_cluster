@@ -59,6 +59,9 @@ def build_graph(data):
 
         node = values['__Node']
 
+        if not node:
+            continue
+
         try:
             graph.nodes[node]['strains'].append(strain)
 
